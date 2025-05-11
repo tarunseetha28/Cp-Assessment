@@ -1,52 +1,75 @@
 # CP Assessment Form
 
-A multi-step form application with Google Sheets integration and email notifications.
+A multi-step assessment form for child education evaluation, built with React and Node.js.
 
 ## Features
 
-- 8-step form with radio button options
-- Final step for collecting user information
-- Google Sheets integration for storing submissions
+- Multi-step form with progress indicator
+- Child information collection
+- Educational assessment questions
+- Google Sheets integration for data storage
 - Email notifications using EmailJS
+- Responsive design with Material-UI
+
+## Project Structure
+
+```
+cp-assessment/
+├── backend/           # Node.js backend
+│   ├── server.js     # Express server
+│   └── package.json  # Backend dependencies
+├── public/           # Static files
+├── src/             # React frontend
+│   ├── components/  # React components
+│   └── App.js       # Main application component
+└── package.json     # Frontend dependencies
+```
 
 ## Setup
 
-1. Install dependencies:
-```bash
-npm install
-```
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   # Install frontend dependencies
+   npm install
 
-2. Configure EmailJS:
-   - Sign up for an EmailJS account at https://www.emailjs.com/
-   - Create an email template
-   - Replace the following in `src/App.js`:
-     - `YOUR_SERVICE_ID`
-     - `YOUR_TEMPLATE_ID`
-     - `YOUR_USER_ID`
+   # Install backend dependencies
+   cd backend
+   npm install
+   ```
 
-3. Configure Google Sheets API:
-   - Create a Google Cloud Project
-   - Enable Google Sheets API
-   - Create credentials (OAuth 2.0 Client ID)
-   - Add the necessary code to handle Google Sheets integration
+3. Set up environment variables:
+   - Create `.env` file in the backend directory
+   - Add required environment variables (see .env.example)
 
-4. Start the development server:
-```bash
-npm start
-```
+4. Start the development servers:
+   ```bash
+   # Start frontend (from root directory)
+   npm start
+
+   # Start backend (from backend directory)
+   cd backend
+   npm run dev
+   ```
 
 ## Environment Variables
 
-Create a `.env` file in the root directory with the following variables:
+Create a `.env` file in the backend directory with the following variables:
+
 ```
-REACT_APP_EMAILJS_SERVICE_ID=your_service_id
-REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
-REACT_APP_EMAILJS_USER_ID=your_user_id
+GOOGLE_CLIENT_EMAIL=your-service-account-email
+GOOGLE_PRIVATE_KEY=your-private-key
+SPREADSHEET_ID=your-google-sheet-id
+EMAIL_USER=your-email
+EMAIL_PASSWORD=your-email-password
 ```
 
 ## Technologies Used
 
 - React
+- Node.js
+- Express
 - Material-UI
+- Google Sheets API
 - EmailJS
-- Google Sheets API 
+- React Router 

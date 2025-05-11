@@ -1,12 +1,13 @@
 import React from 'react';
-import { Container, Box, Typography, Button } from '@mui/material';
+import { Container, Box, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import Button from './Button';
 
 function LandingPage() {
   const navigate = useNavigate();
 
   return (
-    <Container maxWidth="md">
+    <Container >
       <Box 
         sx={{ 
           minHeight: '100vh',
@@ -21,7 +22,7 @@ function LandingPage() {
         {/* Logo placeholder - replace src with your actual logo */}
         <Box sx={{ mb: 4 }}>
           <img 
-            src="/logo.png" 
+            src="/assets/logo.png" 
             alt="Logo" 
             style={{ maxWidth: '200px', height: 'auto' }}
           />
@@ -33,26 +34,15 @@ function LandingPage() {
           sx={{ 
             fontFamily: 'Gilroy, sans-serif',
             fontSize: '40px',
-            fontWeight: 600,
+            fontWeight: 400,
             mb: 4,
             lineHeight: 1.2
           }}
         >
-          Over 50% of Parents Say Teaching Math is Stressful. Is Your Child Struggling? Take Our Quick Assessment to Identify Their Math Level and Unlock the Right Support!
+          Over 50% of Parents Say Teaching Math is Stressful. <b>Is Your Child Struggling?</b> Take Our Quick Assessment to Identify Their Math Level and Unlock the Right Support!
         </Typography>
 
-        <Button 
-          variant="contained" 
-          color="primary"
-          size="large"
-          onClick={() => navigate('/assessment')}
-          sx={{ 
-            py: 2,
-            px: 4,
-            fontSize: '1.2rem',
-            borderRadius: '8px'
-          }}
-        >
+        <Button onClick={() => navigate('/assessment')}>
           Start Assessment
         </Button>
       </Box>

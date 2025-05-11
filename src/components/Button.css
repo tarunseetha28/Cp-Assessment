@@ -1,0 +1,29 @@
+.custom-button {
+    width: 260px;
+    height: 60.96px;
+    border-radius: 113.21px;
+    padding: 18.11px 45.28px 15.85px 45.28px;
+    gap: 11.32px;
+    background: rgba(0, 0, 0, 1);
+    font-family: 'Gilroy-Medium', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.custom-button:disabled {
+    background: rgba(0, 0, 0, 0.5);
+    cursor: not-allowed;
+} 
