@@ -7,7 +7,7 @@ function LandingPage() {
   const navigate = useNavigate();
 
   return (
-    <Container >
+    <Container>
       <Box 
         sx={{ 
           minHeight: '100vh',
@@ -19,7 +19,7 @@ function LandingPage() {
           py: 4
         }}
       >
-        {/* Logo placeholder - replace src with your actual logo */}
+        {/* Logo */}
         <Box sx={{ mb: 4 }}>
           <img 
             src="/assets/logo.png" 

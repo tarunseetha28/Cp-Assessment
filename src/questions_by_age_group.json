@@ -1,0 +1,1270 @@
+{
+  "Age (0-3)": [
+    {
+      "question": "Does your child recognize and point to numbers when they see them?",
+      "options": [
+        {
+          "text": "Yes, they recognize numbers up to 3",
+          "feedback": {
+            "identified_issue": "Early number recognition",
+            "strength": "Identifies small numbers",
+            "improve": "Expand recognition to higher numbers",
+            "message": "\"Great start! Keep pointing out numbers in daily life to help [Child\u2019s Name] recognize more!\"",
+            "why_this_matters": "Recognizing numbers early builds confidence in math"
+          }
+        },
+        {
+          "text": "Yes, they recognize numbers up to 10",
+          "feedback": {
+            "identified_issue": "Strong number recognition",
+            "strength": "Identifies multiple numbers",
+            "improve": "Reinforce number sequencing",
+            "message": "\"Fantastic! [Child\u2019s Name] is on track\u2014try counting games to reinforce number order.\"",
+            "why_this_matters": "Number fluency helps with future math concepts"
+          }
+        },
+        {
+          "text": "No, they don\u2019t recognize numbers yet",
+          "feedback": {
+            "identified_issue": "Needs more exposure to numbers",
+            "strength": "Observes surroundings",
+            "improve": "Introduce numbers in everyday play",
+            "message": "\"No worries! Use books, songs, and flashcards to introduce numbers in a fun way for [Child\u2019s Name].\"",
+            "why_this_matters": "Early number exposure leads to stronger math skills"
+          }
+        }
+      ]
+    },
+    {
+      "question": "If you ask your child to bring you one toy or two toys, do they understand the difference?",
+      "options": [
+        {
+          "text": "Yes, they correctly bring the right amount",
+          "feedback": {
+            "identified_issue": "Strong quantity understanding",
+            "strength": "Differentiates small quantities",
+            "improve": "Introduce simple addition/subtraction",
+            "message": "\"Amazing! [Child\u2019s Name] is understanding numbers well\u2014try asking for different amounts during playtime!\"",
+            "why_this_matters": "Quantity sense is key for early math skills"
+          }
+        },
+        {
+          "text": "Sometimes, they get close but not always correct",
+          "feedback": {
+            "identified_issue": "Developing quantity sense",
+            "strength": "Shows awareness of numbers",
+            "improve": "Reinforce with hands-on activities",
+            "message": "\"Great effort! Keep practicing with real objects to help [Child\u2019s Name] improve accuracy.\"",
+            "why_this_matters": "Understanding quantity improves problem-solving"
+          }
+        },
+        {
+          "text": "No, they don\u2019t seem to understand quantity",
+          "feedback": {
+            "identified_issue": "Needs more exposure to numbers",
+            "strength": "Observes numbers but doesn't apply",
+            "improve": "Use everyday play for hands-on learning",
+            "message": "\"That\u2019s okay! Encourage [Child\u2019s Name] to count toys and objects during playtime.\"",
+            "why_this_matters": "Quantity recognition is a key step in early math"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Does your child enjoy looking at books or flashcards with numbers?",
+      "options": [
+        {
+          "text": "Yes, they recognize and engage with number visuals",
+          "feedback": {
+            "identified_issue": "Strong number interest",
+            "strength": "Enjoys number-related visuals",
+            "improve": "Expand to more interactive activities",
+            "message": "\"Awesome! [Child\u2019s Name] loves numbers\u2014try number-based games to keep the excitement going!\"",
+            "why_this_matters": "Engagement with numbers leads to stronger retention"
+          }
+        },
+        {
+          "text": "Yes, but only when prompted",
+          "feedback": {
+            "identified_issue": "Developing interest in numbers",
+            "strength": "Engages when guided",
+            "improve": "Increase independent engagement",
+            "message": "\"Good start! Try placing number books in easy-to-reach places so [Child\u2019s Name] can explore freely.\"",
+            "why_this_matters": "Independent engagement builds long-term math skills"
+          }
+        },
+        {
+          "text": "No, they don\u2019t show interest",
+          "feedback": {
+            "identified_issue": "Needs motivation to engage with numbers",
+            "strength": "Observes but doesn\u2019t interact",
+            "improve": "Make number learning fun through stories & play",
+            "message": "\"No problem! Try fun number rhymes and interactive flashcards to spark [Child\u2019s Name]\u2019s curiosity.\"",
+            "why_this_matters": "Making numbers fun encourages learning"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Can your child recognize basic shapes (circle, square, triangle)?",
+      "options": [
+        {
+          "text": "Yes, they identify multiple shapes correctly",
+          "feedback": {
+            "identified_issue": "Strong shape recognition",
+            "strength": "Differentiates multiple shapes",
+            "improve": "Introduce more complex shapes",
+            "message": "\"Fantastic! [Child\u2019s Name] is recognizing shapes well. Keep pointing out different shapes in their surroundings!\"",
+            "why_this_matters": "Shape recognition builds early math and spatial skills"
+          }
+        },
+        {
+          "text": "They recognize only circles",
+          "feedback": {
+            "identified_issue": "Developing shape recognition",
+            "strength": "Identifies basic shapes",
+            "improve": "Expand to other shapes",
+            "message": "\"Great progress! Try using fun shape-sorting games to help [Child\u2019s Name] recognize squares and triangles too!\"",
+            "why_this_matters": "Understanding shapes helps with geometry later"
+          }
+        },
+        {
+          "text": "No, they struggle with recognizing shapes",
+          "feedback": {
+            "identified_issue": "Needs more exposure to shapes",
+            "strength": "Observes objects",
+            "improve": "Introduce shapes in everyday play",
+            "message": "\"No worries! Use puzzles, books, and real-world objects to help [Child\u2019s Name] recognize different shapes easily.\"",
+            "why_this_matters": "Shapes are key for early problem-solving"
+          }
+        }
+      ]
+    },
+    {
+      "question": "When playing with blocks or puzzles, does your child attempt to match shapes?",
+      "options": [
+        {
+          "text": "Yes, they correctly match and place shapes",
+          "feedback": {
+            "identified_issue": "Strong spatial skills",
+            "strength": "Matches shapes accurately",
+            "improve": "Introduce more complex puzzles",
+            "message": "\"Excellent! [Child\u2019s Name] is developing great problem-solving skills. Keep challenging them with new puzzles!\"",
+            "why_this_matters": "Puzzle-solving enhances critical thinking"
+          }
+        },
+        {
+          "text": "They attempt but often need help",
+          "feedback": {
+            "identified_issue": "Emerging spatial awareness",
+            "strength": "Engages but needs guidance",
+            "improve": "Encourage independent problem-solving",
+            "message": "\"Great effort! Encourage [Child\u2019s Name] to try matching shapes independently with some hints!\"",
+            "why_this_matters": "Matching shapes improves hand-eye coordination"
+          }
+        },
+        {
+          "text": "No, they don\u2019t engage in shape-matching activities",
+          "feedback": {
+            "identified_issue": "Needs more exposure to puzzles",
+            "strength": "Observes but doesn\u2019t interact",
+            "improve": "Make puzzles part of playtime",
+            "message": "\"No problem! Playing with shape puzzles together can help [Child\u2019s Name] develop interest and confidence.\"",
+            "why_this_matters": "Puzzles build logical thinking"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Does your child show interest in patterns (like sorting toys by color or size)?",
+      "options": [
+        {
+          "text": "Yes, they actively sort and organize objects",
+          "feedback": {
+            "identified_issue": "Strong pattern recognition",
+            "strength": "Understands sorting and sequencing",
+            "improve": "Introduce more complex patterns",
+            "message": "\"Amazing! [Child\u2019s Name] enjoys sorting\u2014try fun pattern games to further build this skill!\"",
+            "why_this_matters": "Recognizing patterns is key to logical thinking"
+          }
+        },
+        {
+          "text": "They sometimes sort but inconsistently",
+          "feedback": {
+            "identified_issue": "Developing pattern recognition",
+            "strength": "Shows interest but inconsistent",
+            "improve": "Reinforce with simple sorting activities",
+            "message": "\"Great start! Encouraging daily sorting games will help [Child\u2019s Name] build a strong pattern-recognition skill.\"",
+            "why_this_matters": "Patterns help with early math skills like sequencing"
+          }
+        },
+        {
+          "text": "No, they don\u2019t yet understand patterns",
+          "feedback": {
+            "identified_issue": "Needs more exposure to sorting and patterns",
+            "strength": "Observes but doesn\u2019t sort",
+            "improve": "Introduce simple pattern games",
+            "message": "\"That\u2019s okay! Try using colored blocks or sorting toys to introduce patterns in a fun way for [Child\u2019s Name].\"",
+            "why_this_matters": "Understanding patterns is foundational for problem-solving"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Does your child recognize and point to numbers when they see them?",
+      "options": [
+        {
+          "text": "Yes, they recognize numbers up to 3",
+          "feedback": {
+            "identified_issue": "Early number recognition",
+            "strength": "Identifies small numbers",
+            "improve": "Expand recognition to higher numbers",
+            "message": "\"Great start! Keep pointing out numbers in daily life to help [Child\u2019s Name] recognize more!\"",
+            "why_this_matters": "Recognizing numbers early builds confidence in math"
+          }
+        },
+        {
+          "text": "Yes, they recognize numbers up to 10",
+          "feedback": {
+            "identified_issue": "Strong number recognition",
+            "strength": "Identifies multiple numbers",
+            "improve": "Reinforce number sequencing",
+            "message": "\"Fantastic! [Child\u2019s Name] is on track\u2014try counting games to reinforce number order.\"",
+            "why_this_matters": "Number fluency helps with future math concepts"
+          }
+        },
+        {
+          "text": "No, they don\u2019t recognize numbers yet",
+          "feedback": {
+            "identified_issue": "Needs more exposure to numbers",
+            "strength": "Observes surroundings",
+            "improve": "Introduce numbers in everyday play",
+            "message": "\"No worries! Use books, songs, and flashcards to introduce numbers in a fun way for [Child\u2019s Name].\"",
+            "why_this_matters": "Early number exposure leads to stronger math skills"
+          }
+        }
+      ]
+    },
+    {
+      "question": "If you ask your child to bring you one toy or two toys, do they understand the difference?",
+      "options": [
+        {
+          "text": "Yes, they correctly bring the right amount",
+          "feedback": {
+            "identified_issue": "Strong quantity understanding",
+            "strength": "Differentiates small quantities",
+            "improve": "Introduce simple addition/subtraction",
+            "message": "\"Amazing! [Child\u2019s Name] is understanding numbers well\u2014try asking for different amounts during playtime!\"",
+            "why_this_matters": "Quantity sense is key for early math skills"
+          }
+        },
+        {
+          "text": "Sometimes, they get close but not always correct",
+          "feedback": {
+            "identified_issue": "Developing quantity sense",
+            "strength": "Shows awareness of numbers",
+            "improve": "Reinforce with hands-on activities",
+            "message": "\"Great effort! Keep practicing with real objects to help [Child\u2019s Name] improve accuracy.\"",
+            "why_this_matters": "Understanding quantity improves problem-solving"
+          }
+        },
+        {
+          "text": "No, they don\u2019t seem to understand quantity",
+          "feedback": {
+            "identified_issue": "Needs more exposure to numbers",
+            "strength": "Observes numbers but doesn't apply",
+            "improve": "Use everyday play for hands-on learning",
+            "message": "\"That\u2019s okay! Encourage [Child\u2019s Name] to count toys and objects during playtime.\"",
+            "why_this_matters": "Quantity recognition is a key step in early math"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Does your child enjoy looking at books or flashcards with numbers?",
+      "options": [
+        {
+          "text": "Yes, they recognize and engage with number visuals",
+          "feedback": {
+            "identified_issue": "Strong number interest",
+            "strength": "Enjoys number-related visuals",
+            "improve": "Expand to more interactive activities",
+            "message": "\"Awesome! [Child\u2019s Name] loves numbers\u2014try number-based games to keep the excitement going!\"",
+            "why_this_matters": "Engagement with numbers leads to stronger retention"
+          }
+        },
+        {
+          "text": "Yes, but only when prompted",
+          "feedback": {
+            "identified_issue": "Developing interest in numbers",
+            "strength": "Engages when guided",
+            "improve": "Increase independent engagement",
+            "message": "\"Good start! Try placing number books in easy-to-reach places so [Child\u2019s Name] can explore freely.\"",
+            "why_this_matters": "Independent engagement builds long-term math skills"
+          }
+        },
+        {
+          "text": "No, they don\u2019t show interest",
+          "feedback": {
+            "identified_issue": "Needs motivation to engage with numbers",
+            "strength": "Observes but doesn\u2019t interact",
+            "improve": "Make number learning fun through stories & play",
+            "message": "\"No problem! Try fun number rhymes and interactive flashcards to spark [Child\u2019s Name]\u2019s curiosity.\"",
+            "why_this_matters": "Making numbers fun encourages learning"
+          }
+        }
+      ]
+    }
+  ],
+  "Age (3-6)": [
+    {
+      "question": "Can your child recognize and name numbers up to 20?",
+      "options": [
+        {
+          "text": "Yes, they confidently recognize numbers up to 20",
+          "feedback": {
+            "identified_issue": "Strong number recognition",
+            "strength": "Confidently identifies numbers",
+            "improve": "Introduce basic addition & number patterns",
+            "message": "\"Great job! [Child\u2019s Name] is doing fantastic with numbers. Now, try simple addition games to make learning more fun!\"",
+            "why_this_matters": "Strong number recognition is the foundation of math learning"
+          }
+        },
+        {
+          "text": "Yes, but only up to 10",
+          "feedback": {
+            "identified_issue": "Developing number recognition skills",
+            "strength": "Recognizes numbers up to 10",
+            "improve": "Gradually expand number range",
+            "message": "\"Awesome! Keep practicing with [Child\u2019s Name] using fun activities like number puzzles to boost confidence.\"",
+            "why_this_matters": "Expanding number knowledge supports counting and calculations"
+          }
+        },
+        {
+          "text": "No, they still struggle with number recognition",
+          "feedback": {
+            "identified_issue": "Needs more exposure to numbers",
+            "strength": "Shows interest in learning",
+            "improve": "Use interactive number games",
+            "message": "\"No worries! Try colorful flashcards and hands-on activities to help [Child\u2019s Name] get comfortable with numbers.\"",
+            "why_this_matters": "Early exposure to numbers builds a strong math foundation"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Can your child count objects up to 10 accurately?",
+      "options": [
+        {
+          "text": "Yes, they count correctly every time",
+          "feedback": {
+            "identified_issue": "Strong counting skills",
+            "strength": "Counts accurately",
+            "improve": "Introduce skip counting and simple math",
+            "message": "\"Fantastic! [Child\u2019s Name] has great counting skills. Now, try skip counting for an extra challenge!\"",
+            "why_this_matters": "Counting accuracy leads to better math fluency"
+          }
+        },
+        {
+          "text": "Yes, but sometimes they skip or miscount",
+          "feedback": {
+            "identified_issue": "Developing counting consistency",
+            "strength": "Understands counting but needs practice",
+            "improve": "Reinforce counting through daily activities",
+            "message": "\"Great progress! Help [Child\u2019s Name] count toys or snacks daily to improve accuracy.\"",
+            "why_this_matters": "Consistent counting builds math confidence"
+          }
+        },
+        {
+          "text": "No, they struggle with counting objects",
+          "feedback": {
+            "identified_issue": "Needs support in counting",
+            "strength": "Engages but finds it challenging",
+            "improve": "Use visual aids and finger counting",
+            "message": "\"That\u2019s okay! Use everyday objects like buttons or fruits to help [Child\u2019s Name] count in a fun way.\"",
+            "why_this_matters": "Counting is essential for early math skills"
+          }
+        }
+      ]
+    },
+    {
+      "question": "When shown a number, can your child say what comes before and after it?",
+      "options": [
+        {
+          "text": "Yes, they can identify both before and after numbers easily",
+          "feedback": {
+            "identified_issue": "Strong number sequencing skills",
+            "strength": "Recognizes number order fluently",
+            "improve": "Introduce number patterns and skip counting",
+            "message": "\"Awesome! [Child\u2019s Name] is doing great. Try number puzzles and skip counting to make it even more fun!\"",
+            "why_this_matters": "Number sequencing helps with addition and subtraction"
+          }
+        },
+        {
+          "text": "Yes, but only for small numbers (1-5)",
+          "feedback": {
+            "identified_issue": "Developing number sequencing",
+            "strength": "Recognizes number patterns in a limited range",
+            "improve": "Expand to numbers up to 10 and beyond",
+            "message": "\"Good job! Keep practicing with [Child\u2019s Name] using number lines and simple counting games.\"",
+            "why_this_matters": "Number order understanding supports mental math"
+          }
+        },
+        {
+          "text": "No, they are not familiar with this concept yet",
+          "feedback": {
+            "identified_issue": "Needs exposure to number sequencing",
+            "strength": "Engages but hasn\u2019t grasped sequencing",
+            "improve": "Use number charts and hands-on activities",
+            "message": "\"No worries! Try using number flashcards and songs to help [Child\u2019s Name] get familiar with number order.\"",
+            "why_this_matters": "Understanding before/after numbers builds math fluency"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Can your child add single-digit numbers using fingers or objects?",
+      "options": [
+        {
+          "text": "Yes, they can solve simple addition problems correctly",
+          "feedback": {
+            "identified_issue": "Strong addition skills",
+            "strength": "Can add small numbers confidently",
+            "improve": "Introduce mental math strategies",
+            "message": "\"Amazing! [Child\u2019s Name] is doing great with addition. Try simple math games to boost confidence further!\"",
+            "why_this_matters": "Strong addition skills form the base for advanced math concepts"
+          }
+        },
+        {
+          "text": "Yes, but they often count incorrectly or need guidance",
+          "feedback": {
+            "identified_issue": "Developing addition skills",
+            "strength": "Understands concept but needs accuracy",
+            "improve": "Reinforce counting strategies",
+            "message": "\"Great progress! Encourage [Child\u2019s Name] to count with fingers or small objects for better accuracy.\"",
+            "why_this_matters": "Counting-based addition helps transition to mental math"
+          }
+        },
+        {
+          "text": "No, they don\u2019t understand addition yet",
+          "feedback": {
+            "identified_issue": "Needs exposure to addition",
+            "strength": "Engages with numbers but finds addition tough",
+            "improve": "Use real-life examples and counting aids",
+            "message": "\"No worries! Use everyday examples like adding toys or fruits to help [Child\u2019s Name] understand addition.\"",
+            "why_this_matters": "Understanding addition is key for early math development"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Can your child recognize and solve basic subtraction problems?",
+      "options": [
+        {
+          "text": "Yes, they understand subtraction well",
+          "feedback": {
+            "identified_issue": "Strong subtraction skills",
+            "strength": "Solves basic problems correctly",
+            "improve": "Introduce word problems and real-life applications",
+            "message": "\"Fantastic! [Child\u2019s Name] is doing great with subtraction. Try using story-based problems for fun learning!\"",
+            "why_this_matters": "Subtraction is essential for problem-solving skills"
+          }
+        },
+        {
+          "text": "Yes, but they struggle with larger numbers",
+          "feedback": {
+            "identified_issue": "Needs practice with bigger numbers",
+            "strength": "Understands concept but lacks accuracy",
+            "improve": "Use hands-on activities and number lines",
+            "message": "\"Awesome effort! Help [Child\u2019s Name] practice with number lines and visual objects to improve subtraction skills.\"",
+            "why_this_matters": "Larger number subtraction helps with future math concepts"
+          }
+        },
+        {
+          "text": "No, they don\u2019t understand subtraction yet",
+          "feedback": {
+            "identified_issue": "Needs foundational subtraction practice",
+            "strength": "Engages but hasn\u2019t grasped subtraction fully",
+            "improve": "Use real-life objects and simple take-away exercises",
+            "message": "\"That\u2019s okay! Try using daily activities like sharing snacks to teach [Child\u2019s Name] how subtraction works.\"",
+            "why_this_matters": "Subtraction is a fundamental math skill"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Can your child quickly recognize groups of small objects?",
+      "options": [
+        {
+          "text": "Yes, they recognize groups up to 5 easily",
+          "feedback": {
+            "identified_issue": "Strong visual math skills",
+            "strength": "Quickly identifies small groups without counting",
+            "improve": "Introduce grouping for larger numbers",
+            "message": "\"Great job! [Child\u2019s Name] has sharp visual math skills. Try games that involve quick number recognition!\"",
+            "why_this_matters": "Subitizing helps with faster mental calculations"
+          }
+        },
+        {
+          "text": "Sometimes, but they still count individually",
+          "feedback": {
+            "identified_issue": "Developing subitizing skills",
+            "strength": "Can recognize groups but still counts",
+            "improve": "Encourage grouping and estimation games",
+            "message": "\"Good progress! Play fun activities with [Child\u2019s Name] to improve quick number recognition.\"",
+            "why_this_matters": "Quick recognition of numbers leads to better math fluency"
+          }
+        },
+        {
+          "text": "No, they count each object separately",
+          "feedback": {
+            "identified_issue": "Needs exposure to visual grouping",
+            "strength": "Engages with numbers but relies on counting",
+            "improve": "Use flashcards and hands-on grouping activities",
+            "message": "\"No worries! Try using flashcards or sorting objects into small groups to help [Child\u2019s Name] recognize numbers faster.\"",
+            "why_this_matters": "Recognizing groups of objects quickly improves addition and subtraction"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Can your child identify and complete simple patterns?",
+      "options": [
+        {
+          "text": "Yes, they easily recognize and continue patterns",
+          "feedback": {
+            "identified_issue": "Strong pattern recognition",
+            "strength": "Understands sequences well",
+            "improve": "Introduce more complex patterns",
+            "message": "\"Fantastic! [Child\u2019s Name] is great at spotting patterns. Try hands-on games to strengthen this skill further!\"",
+            "why_this_matters": "Pattern recognition builds logical thinking and math readiness"
+          }
+        },
+        {
+          "text": "Yes, but they need hints to complete them",
+          "feedback": {
+            "identified_issue": "Developing pattern skills",
+            "strength": "Can recognize patterns with help",
+            "improve": "Encourage independent pattern completion",
+            "message": "\"Great effort! Give [Child\u2019s Name] more practice with hands-on activities to boost confidence in patterns.\"",
+            "why_this_matters": "Recognizing patterns helps with early math skills like sequences and problem-solving"
+          }
+        },
+        {
+          "text": "No, they struggle with recognizing patterns",
+          "feedback": {
+            "identified_issue": "Needs support in pattern recognition",
+            "strength": "Engages but finds it difficult to predict sequences",
+            "improve": "Use simple, colorful patterns in daily activities",
+            "message": "\"No worries! Use colors, toys, or flashcards to help [Child\u2019s Name] recognize patterns more easily.\"",
+            "why_this_matters": "Patterns are essential for math and logical thinking"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Can your child correctly name and match basic shapes?",
+      "options": [
+        {
+          "text": "Yes, they identify and match shapes correctly",
+          "feedback": {
+            "identified_issue": "Strong shape recognition",
+            "strength": "Matches and names shapes accurately",
+            "improve": "Introduce 3D shapes and advanced puzzles",
+            "message": "\"Amazing work! [Child\u2019s Name] has a great grasp of shapes. Try shape puzzles for an extra challenge!\"",
+            "why_this_matters": "Recognizing shapes is key to spatial awareness and geometry"
+          }
+        },
+        {
+          "text": "Yes, but they mix up some shapes",
+          "feedback": {
+            "identified_issue": "Developing shape recognition",
+            "strength": "Understands basic shapes but confuses some",
+            "improve": "Reinforce shape matching with games and puzzles",
+            "message": "\"Good effort! Help [Child\u2019s Name] practice with shape puzzles and tracing activities.\"",
+            "why_this_matters": "Identifying shapes correctly strengthens problem-solving and spatial skills"
+          }
+        },
+        {
+          "text": "No, they struggle with identifying shapes",
+          "feedback": {
+            "identified_issue": "Needs foundational shape learning",
+            "strength": "Engages but hasn\u2019t fully grasped shapes",
+            "improve": "Use flashcards, hands-on activities, and tracing",
+            "message": "\"That\u2019s okay! Introduce [Child\u2019s Name] to shape-based activities and drawing exercises.\"",
+            "why_this_matters": "Shape recognition is essential for early math concepts like geometry"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Does your child enjoy problem-solving activities like puzzles?",
+      "options": [
+        {
+          "text": "Yes, they love solving puzzles and challenges",
+          "feedback": {
+            "identified_issue": "Strong problem-solving skills",
+            "strength": "Enjoys and engages in problem-solving",
+            "improve": "Introduce more challenging puzzles and logic games",
+            "message": "\"Great job! [Child\u2019s Name] has strong problem-solving skills. Try more logic puzzles to keep them engaged!\"",
+            "why_this_matters": "Puzzles enhance critical thinking and logical reasoning"
+          }
+        },
+        {
+          "text": "Yes, but they need some help in solving them",
+          "feedback": {
+            "identified_issue": "Developing problem-solving ability",
+            "strength": "Interested but needs guidance",
+            "improve": "Encourage independent problem-solving with simple puzzles",
+            "message": "\"Awesome progress! Let [Child\u2019s Name] explore puzzles with slight guidance to boost confidence.\"",
+            "why_this_matters": "Problem-solving skills help with math, logic, and reasoning"
+          }
+        },
+        {
+          "text": "No, they get frustrated or lose interest quickly",
+          "feedback": {
+            "identified_issue": "Needs encouragement in problem-solving",
+            "strength": "Engages but struggles to persist",
+            "improve": "Start with simpler, fun puzzles to build interest",
+            "message": "\"No worries! Introduce fun, easy puzzles to make problem-solving exciting for [Child\u2019s Name].\"",
+            "why_this_matters": "Problem-solving builds patience and logical thinking"
+          }
+        }
+      ]
+    }
+  ],
+  "Age(6-9)": [
+    {
+      "question": "Counting Forward & Backward (1-100)",
+      "options": [
+        {
+          "text": "a) Yes, without mistakes",
+          "feedback": {
+            "identified_issue": "Strong counting skills",
+            "strength": "Confidently counts both ways",
+            "improve": "Increase speed & efficiency",
+            "message": "\"Great job! [Child\u2019s Name] has a strong grasp of numbers. Keep encouraging them with fun counting games!\"",
+            "why_this_matters": "Counting fluency builds strong math fundamentals"
+          }
+        },
+        {
+          "text": "b) Yes, but sometimes makes mistakes",
+          "feedback": {
+            "identified_issue": "Needs consistency in counting",
+            "strength": "Counts but makes occasional errors",
+            "improve": "Improve accuracy with number drills",
+            "message": "\"[Child\u2019s Name] is doing well! A little more practice with number charts can boost confidence.\"",
+            "why_this_matters": "Fluency in counting helps in addition/subtraction"
+          }
+        },
+        {
+          "text": "c) No, they struggle beyond 50",
+          "feedback": {
+            "identified_issue": "Struggles with larger numbers",
+            "strength": "Recognizes numbers but loses track",
+            "improve": "Reinforce numbers beyond 50",
+            "message": "\"No worries! Try engaging [Child\u2019s Name] with number songs and interactive activities to strengthen their counting skills.\"",
+            "why_this_matters": "Mastering counting is essential for math confidence"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Single-Digit Addition & Subtraction",
+      "options": [
+        {
+          "text": "a) Yes, they solve mentally and accurately",
+          "feedback": {
+            "identified_issue": "Strong arithmetic skills",
+            "strength": "Adds/subtracts fluently without aids",
+            "improve": "Move to two-digit problems",
+            "message": "\"Amazing! [Child\u2019s Name] is quick with numbers. Speed drills and fun math challenges will keep them sharp!\"",
+            "why_this_matters": "Mental math speed is key for problem-solving"
+          }
+        },
+        {
+          "text": "b) Yes, but they take time or use fingers",
+          "feedback": {
+            "identified_issue": "Needs better mental math fluency",
+            "strength": "Can add/subtract but relies on fingers",
+            "improve": "Reduce dependence on physical counting",
+            "message": "\"[Child\u2019s Name] is making great progress! Number puzzles and simple math games can help refine their skills.\"",
+            "why_this_matters": "Mental math improves efficiency in problem-solving"
+          }
+        },
+        {
+          "text": "c) No, they struggle with basic addition/subtraction",
+          "feedback": {
+            "identified_issue": "Lacks basic arithmetic understanding",
+            "strength": "Recognizes numbers but struggles with operations",
+            "improve": "Strengthen fundamental concepts",
+            "message": "\"It\u2019s okay! Using hands-on activities like counting objects can help [Child\u2019s Name] feel more confident.\"",
+            "why_this_matters": "Addition and subtraction are math building blocks"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Multiplication Tables",
+      "options": [
+        {
+          "text": "a) Yes, they know tables up to 10 or more",
+          "feedback": {
+            "identified_issue": "Strong multiplication skills",
+            "strength": "Recites and applies tables",
+            "improve": "Move to advanced multiplication tricks",
+            "message": "\"Fantastic! [Child\u2019s Name] has mastered multiplication tables well. Keep reinforcing with real-life applications!\"",
+            "why_this_matters": "Multiplication is essential for division & algebra"
+          }
+        },
+        {
+          "text": "b) Yes, but only up to 5",
+          "feedback": {
+            "identified_issue": "Partial multiplication fluency",
+            "strength": "Knows tables but needs more practice",
+            "improve": "Expand to tables beyond 5",
+            "message": "\"[Child\u2019s Name] is on the right track! Practicing one new table each week will build a solid foundation.\"",
+            "why_this_matters": "Mastery of tables makes math easier"
+          }
+        },
+        {
+          "text": "c) No, they haven\u2019t started yet",
+          "feedback": {
+            "identified_issue": "No multiplication knowledge",
+            "strength": "Recognizes numbers but not their products",
+            "improve": "Introduce tables in a fun way",
+            "message": "\"No worries! Visualizing multiplication as repeated addition can make learning easier for [Child\u2019s Name].\"",
+            "why_this_matters": "Learning tables early builds confidence in math"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Word Problems",
+      "options": [
+        {
+          "text": "a) Yes, they solve easily",
+          "feedback": {
+            "identified_issue": "Strong problem-solving skills",
+            "strength": "Understands and applies math in real-life scenarios",
+            "improve": "Move to multi-step problems",
+            "message": "\"Well done! [Child\u2019s Name] is great at problem-solving. Encouraging them with daily challenges will keep them sharp!\"",
+            "why_this_matters": "Word problems develop logical thinking"
+          }
+        },
+        {
+          "text": "b) Yes, but they need help understanding the question",
+          "feedback": {
+            "identified_issue": "Needs better comprehension",
+            "strength": "Can solve when guided",
+            "improve": "Strengthen reading-math connection",
+            "message": "\"[Child\u2019s Name] is improving! Breaking problems into smaller steps can help them understand better.\"",
+            "why_this_matters": "Word problems improve real-world math application"
+          }
+        },
+        {
+          "text": "c) No, they struggle to solve these problems",
+          "feedback": {
+            "identified_issue": "Difficulty in understanding & solving",
+            "strength": "Recognizes numbers but not the context",
+            "improve": "Teach using everyday examples",
+            "message": "\"It\u2019s okay! Helping [Child\u2019s Name] relate math problems to real-life scenarios can make learning more engaging.\"",
+            "why_this_matters": "Understanding word problems builds independence"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Number Patterns",
+      "options": [
+        {
+          "text": "a) Yes, they easily spot number patterns",
+          "feedback": {
+            "identified_issue": "Strong pattern recognition",
+            "strength": "Quickly identifies and extends patterns",
+            "improve": "Introduce more complex sequences",
+            "message": "\"Impressive! [Child\u2019s Name] recognizes patterns easily. Keep challenging them with number sequences!\"",
+            "why_this_matters": "Patterns are fundamental for algebra"
+          }
+        },
+        {
+          "text": "b) Sometimes, but they need hints",
+          "feedback": {
+            "identified_issue": "Partial pattern awareness",
+            "strength": "Recognizes patterns but needs guidance",
+            "improve": "Strengthen independent pattern-solving",
+            "message": "\"[Child\u2019s Name] is getting there! Simple pattern games will reinforce their understanding.\"",
+            "why_this_matters": "Pattern recognition improves logic and reasoning"
+          }
+        },
+        {
+          "text": "c) No, they struggle with patterns",
+          "feedback": {
+            "identified_issue": "Limited pattern understanding",
+            "strength": "Struggles to see number relationships",
+            "improve": "Introduce simple patterns first",
+            "message": "\"No worries! Playing pattern recognition games can help [Child\u2019s Name] improve steadily.\"",
+            "why_this_matters": "Recognizing patterns is key to math fluency"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Understanding Fractions",
+      "options": [
+        {
+          "text": "a) Yes, they understand basic fractions",
+          "feedback": {
+            "identified_issue": "Strong fraction knowledge",
+            "strength": "Recognizes and applies fraction concepts",
+            "improve": "Move to addition/subtraction of fractions",
+            "message": "\"Great job! [Child\u2019s Name] understands fractions well. Cooking or dividing objects can be a fun way to reinforce learning!\"",
+            "why_this_matters": "Fractions are key for advanced math"
+          }
+        },
+        {
+          "text": "b) Somewhat, but they mix up concepts",
+          "feedback": {
+            "identified_issue": "Needs better fraction clarity",
+            "strength": "Identifies fractions but confuses meanings",
+            "improve": "Reinforce concept clarity",
+            "message": "\"[Child\u2019s Name] is doing well! Using visual aids like fraction circles can make concepts clearer.\"",
+            "why_this_matters": "Understanding fractions is crucial for division & decimals"
+          }
+        },
+        {
+          "text": "c) No, they don\u2019t understand fractions yet",
+          "feedback": {
+            "identified_issue": "No fraction knowledge",
+            "strength": "Recognizes parts but not fractions",
+            "improve": "Teach fractions using objects",
+            "message": "\"That\u2019s okay! Hands-on activities, like cutting fruit into halves, can help [Child\u2019s Name] grasp fractions better.\"",
+            "why_this_matters": "Learning fractions early boosts math confidence"
+          }
+        }
+      ]
+    },
+    {
+      "question": "2D & 3D Shape Recognition",
+      "options": [
+        {
+          "text": "a) Yes, they can name and identify both 2D and 3D shapes",
+          "feedback": {
+            "identified_issue": "Strong shape differentiation",
+            "strength": "Recognizes and classifies shapes correctly",
+            "improve": "Move to angles and properties of shapes",
+            "message": "\"Awesome! [Child\u2019s Name] confidently identifies shapes. Keep exploring shapes in everyday life!\"",
+            "why_this_matters": "Shape recognition is important for geometry"
+          }
+        },
+        {
+          "text": "b) Yes, but they confuse some shapes",
+          "feedback": {
+            "identified_issue": "Needs better shape identification",
+            "strength": "Can name some but mixes up others",
+            "improve": "Strengthen differentiation of similar shapes",
+            "message": "\"[Child\u2019s Name] is doing well! Shape-sorting games can help them refine their skills.\"",
+            "why_this_matters": "Understanding shapes helps in problem-solving"
+          }
+        },
+        {
+          "text": "c) No, they only recognize basic shapes like circles and squares",
+          "feedback": {
+            "identified_issue": "Limited shape awareness",
+            "strength": "Recognizes few basic shapes",
+            "improve": "Expand exposure to more shapes",
+            "message": "\"No worries! Practicing with flashcards and real-world objects will help [Child\u2019s Name] recognize shapes better.\"",
+            "why_this_matters": "Shape recognition is key for measurement & design"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Reading an Analog Clock",
+      "options": [
+        {
+          "text": "a) Yes, they read time accurately",
+          "feedback": {
+            "identified_issue": "Strong time-reading skills",
+            "strength": "Reads both hours and minutes correctly",
+            "improve": "Move to elapsed time calculations",
+            "message": "\"Well done! [Child\u2019s Name] reads time accurately. Keep reinforcing with daily time-checking exercises!\"",
+            "why_this_matters": "Reading clocks helps with daily scheduling"
+          }
+        },
+        {
+          "text": "b) Yes, but they struggle with minutes and half-past/quarter-past concepts",
+          "feedback": {
+            "identified_issue": "Needs better understanding of minute-hand movements",
+            "strength": "Can tell hours but struggles with exact minutes",
+            "improve": "Strengthen minute-hand concept",
+            "message": "\"[Child\u2019s Name] is on the right path! Practicing \u2018quarter past\u2019 and \u2018half past\u2019 concepts will strengthen their skills.\"",
+            "why_this_matters": "Understanding time helps in daily planning"
+          }
+        },
+        {
+          "text": "c) No, they can\u2019t read an analog clock yet",
+          "feedback": {
+            "identified_issue": "No time-reading skills",
+            "strength": "Recognizes clock but not its meaning",
+            "improve": "Teach using simple daily schedules",
+            "message": "\"It\u2019s okay! Using a real clock and daily practice can help [Child\u2019s Name] learn to read time confidently.\"",
+            "why_this_matters": "Time awareness is crucial for routine management"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Comparing Weights & Lengths",
+      "options": [
+        {
+          "text": "a) Yes, they can compare and estimate sizes well",
+          "feedback": {
+            "identified_issue": "Strong measurement skills",
+            "strength": "Estimates and compares sizes accurately",
+            "improve": "Move to standard measurement units",
+            "message": "\"Fantastic! [Child\u2019s Name] understands measurement well. Keep encouraging them with real-life comparisons!\"",
+            "why_this_matters": "Understanding measurements is key for math & science"
+          }
+        },
+        {
+          "text": "b) Sometimes, but they guess instead of measuring",
+          "feedback": {
+            "identified_issue": "Needs better comparison strategies",
+            "strength": "Can estimate but lacks precision",
+            "improve": "Reinforce measurement techniques",
+            "message": "\"[Child\u2019s Name] is getting there! Hands-on measuring activities can boost their understanding.\"",
+            "why_this_matters": "Measurement skills are needed for practical math"
+          }
+        },
+        {
+          "text": "c) No, they struggle with these comparisons",
+          "feedback": {
+            "identified_issue": "No measurement understanding",
+            "strength": "Recognizes objects but not their sizes",
+            "improve": "Introduce hands-on comparison activities",
+            "message": "\"No worries! Helping [Child\u2019s Name] estimate and compare objects at home will make learning fun and practical.\"",
+            "why_this_matters": "Comparing objects builds math intuition"
+          }
+        }
+      ]
+    }
+  ],
+  "Age(9-12)": [
+    {
+      "question": "Mental Math Skills",
+      "options": [
+        {
+          "text": "a) Yes, they solve all operations quickly and accurately.",
+          "feedback": {
+            "identified_issue": "No issue identified.",
+            "strength": "Strong mental math skills and numerical fluency.",
+            "improve": "-",
+            "message": "Great job! [Child's Name] is already showing excellent mental math skills. Keep encouraging them with fun challenges to maintain their speed and accuracy!",
+            "why_this_matters": "Strong mental math boosts confidence and problem-solving abilities."
+          }
+        },
+        {
+          "text": "b) Yes, but they take some time for complex calculations.",
+          "feedback": {
+            "identified_issue": "Needs more fluency in handling complex calculations.",
+            "strength": "Understands operations but needs better speed.",
+            "improve": "Improves speed and accuracy in mental math.",
+            "message": "[Child's Name] is doing well! With a little more practice using engaging math activities, their speed will improve naturally.",
+            "why_this_matters": "Fluency in calculations helps with exams and daily problem-solving."
+          }
+        },
+        {
+          "text": "c) No, they struggle with mental calculations.",
+          "feedback": {
+            "identified_issue": "Lacks confidence and fluency in mental math.",
+            "strength": "-",
+            "improve": "Needs foundational practice in number operations.",
+            "message": "No worries! We\u2019ll introduce simple and effective strategies to help [Child's Name] improve their mental math step by step.",
+            "why_this_matters": "Mental math is essential for quick calculations in school and real life."
+          }
+        }
+      ]
+    },
+    {
+      "question": "Divisibility Rules",
+      "options": [
+        {
+          "text": "a) Yes, they confidently apply divisibility rules.",
+          "feedback": {
+            "identified_issue": "No issue identified.",
+            "strength": "Strong understanding of divisibility rules.",
+            "improve": "-",
+            "message": "Fantastic! [Child's Name] has mastered divisibility rules. Keep reinforcing them with fun number games!",
+            "why_this_matters": "Divisibility rules make factorization and problem-solving easier."
+          }
+        },
+        {
+          "text": "b) Yes, but only for simple numbers.",
+          "feedback": {
+            "identified_issue": "Needs clarity in applying divisibility rules to larger numbers.",
+            "strength": "Understands some rules but not all.",
+            "improve": "Strengthens concept clarity.",
+            "message": "Great progress! A little more structured practice will help [Child's Name] confidently apply these rules to all numbers.",
+            "why_this_matters": "Mastering divisibility helps with division, fractions, and prime factorization."
+          }
+        },
+        {
+          "text": "c) No, they are unfamiliar with divisibility rules.",
+          "feedback": {
+            "identified_issue": "Lacks understanding of divisibility rules.",
+            "strength": "-",
+            "improve": "Needs a structured approach to learning divisibility.",
+            "message": "That\u2019s okay! We\u2019ll introduce [Child's Name] to easy tricks to make divisibility rules fun and intuitive.",
+            "why_this_matters": "Understanding divisibility is key for simplifying math calculations."
+          }
+        }
+      ]
+    },
+    {
+      "question": "Fractions, Decimals & Percentages",
+      "options": [
+        {
+          "text": "a) Yes, they can convert between fractions, decimals, and percentages easily.",
+          "feedback": {
+            "identified_issue": "No issue identified.",
+            "strength": "Strong skills in number conversions.",
+            "improve": "-",
+            "message": "Impressive! [Child's Name] has a great grasp of fractions, decimals, and percentages.",
+            "why_this_matters": "These conversions are crucial in real-world applications and advanced math."
+          }
+        },
+        {
+          "text": "b) Yes, but they need a little guidance.",
+          "feedback": {
+            "identified_issue": "Needs more confidence in complex fraction conversions.",
+            "strength": "Understands basics but struggles with advanced conversions.",
+            "improve": "Improves confidence in larger number conversions.",
+            "message": "Great work! With more guided practice, [Child's Name] will soon master all types of fraction conversions.",
+            "why_this_matters": "Mastering fractions is essential for algebra and real-life calculations."
+          }
+        },
+        {
+          "text": "c) No, they struggle with conversions.",
+          "feedback": {
+            "identified_issue": "Difficulty in understanding fraction-decimal-percentage relationships.",
+            "strength": "-",
+            "improve": "Needs a structured approach to learning conversions.",
+            "message": "That\u2019s okay! We\u2019ll break it down into simple steps to make fraction learning fun and easy for [Child's Name].",
+            "why_this_matters": "Strong fraction skills are essential for higher math concepts."
+          }
+        }
+      ]
+    },
+    {
+      "question": "Pattern Recognition & Sequences",
+      "options": [
+        {
+          "text": "a) Yes, they can recognize and extend number patterns easily.",
+          "feedback": {
+            "identified_issue": "No issue identified.",
+            "strength": "Strong logical thinking and pattern recognition.",
+            "improve": "-",
+            "message": "Amazing! [Child\u2019s Name] has a great ability to spot number patterns. Keep challenging them with new sequences to sharpen their skills even more!",
+            "why_this_matters": "Pattern recognition is the foundation of algebra and problem-solving in higher math."
+          }
+        },
+        {
+          "text": "b) Yes, but they sometimes need help identifying complex patterns.",
+          "feedback": {
+            "identified_issue": "Needs improvement in recognizing more complex sequences.",
+            "strength": "Understands simple patterns but struggles with advanced ones.",
+            "improve": "Strengthens logical thinking for more complex problems.",
+            "message": "Great progress! With a little more guided practice, [Child\u2019s Name] will be able to tackle even the trickiest sequences confidently.",
+            "why_this_matters": "Recognizing number patterns helps in algebra, geometry, and problem-solving."
+          }
+        },
+        {
+          "text": "c) No, they struggle with number sequences.",
+          "feedback": {
+            "identified_issue": "Finds it difficult to recognize number patterns and predict sequences.",
+            "strength": "-",
+            "improve": "Needs structured learning for pattern recognition.",
+            "message": "No worries! We\u2019ll introduce [Child\u2019s Name] to fun and engaging exercises that make recognizing patterns much easier.",
+            "why_this_matters": "Identifying patterns is a critical skill for higher-level math and reasoning."
+          }
+        }
+      ]
+    },
+    {
+      "question": "Logical Thinking & Problem-Solving",
+      "options": [
+        {
+          "text": "a) Yes, they love puzzles and problem-solving activities.",
+          "feedback": {
+            "identified_issue": "No issue identified.",
+            "strength": "Strong problem-solving skills and logical reasoning.",
+            "improve": "-",
+            "message": "Fantastic! [Child\u2019s Name] enjoys puzzles, which is a great sign of strong analytical thinking. Keep encouraging them with challenging games and math riddles!",
+            "why_this_matters": "Logical thinking improves decision-making and critical analysis skills."
+          }
+        },
+        {
+          "text": "b) Yes, but only when they find them interesting.",
+          "feedback": {
+            "identified_issue": "Needs more motivation to engage with problem-solving consistently.",
+            "strength": "Enjoys problem-solving but needs engaging activities.",
+            "improve": "Builds perseverance in solving logic-based problems.",
+            "message": "Great start! With fun and interactive challenges, [Child\u2019s Name] will develop a stronger love for problem-solving.",
+            "why_this_matters": "Consistent problem-solving practice helps with competitive exams and real-world applications."
+          }
+        },
+        {
+          "text": "c) No, they get frustrated with logic-based problems.",
+          "feedback": {
+            "identified_issue": "Struggles with logical thinking and problem-solving.",
+            "strength": "-",
+            "improve": "Needs a step-by-step approach to logical reasoning.",
+            "message": "That\u2019s okay! We\u2019ll introduce [Child\u2019s Name] to simple problem-solving tricks that will make learning fun and frustration-free.",
+            "why_this_matters": "Strong logic skills build confidence in math and everyday problem-solving."
+          }
+        }
+      ]
+    },
+    {
+      "question": "Word Problem Solving Skills",
+      "options": [
+        {
+          "text": "a) Yes, they quickly understand and apply the correct operation.",
+          "feedback": {
+            "identified_issue": "No issue identified.",
+            "strength": "Strong comprehension and problem-solving skills.",
+            "improve": "-",
+            "message": "Fantastic! [Child\u2019s Name] has a sharp mind for solving word problems. Keep up the great work!",
+            "why_this_matters": "Being able to break down word problems ensures success in advanced math topics."
+          }
+        },
+        {
+          "text": "b) Yes, but they need extra time to think it through.",
+          "feedback": {
+            "identified_issue": "Takes time to identify the correct operations in word problems.",
+            "strength": "Understands concepts but lacks confidence in quick application.",
+            "improve": "Needs more practice with identifying keywords and operations in problems.",
+            "message": "Great job! With a little extra practice, [Child\u2019s Name] will be solving word problems with confidence and speed.",
+            "why_this_matters": "Quick identification of operations is key for competitive exams and real-world problem-solving."
+          }
+        },
+        {
+          "text": "c) No, they struggle with word problems.",
+          "feedback": {
+            "identified_issue": "Finds it difficult to understand and apply operations in word problems.",
+            "strength": "-",
+            "improve": "Needs structured learning to break down word problems.",
+            "message": "No worries! We\u2019ll introduce [Child\u2019s Name] to simple techniques that make solving word problems much easier.",
+            "why_this_matters": "Understanding word problems is essential for real-life application of math skills."
+          }
+        }
+      ]
+    },
+    {
+      "question": "Shape Recognition & Classification",
+      "options": [
+        {
+          "text": "a) Yes, they can confidently identify and differentiate between shapes.",
+          "feedback": {
+            "identified_issue": "No issue identified.",
+            "strength": "Strong understanding of geometric shapes.",
+            "improve": "-",
+            "message": "Fantastic! [Child\u2019s Name] has a solid grasp of shapes and their properties. Keep encouraging them to explore real-world applications of geometry!",
+            "why_this_matters": "Shape recognition builds a foundation for advanced geometry and problem-solving."
+          }
+        },
+        {
+          "text": "b) Yes, but they sometimes confuse certain shapes.",
+          "feedback": {
+            "identified_issue": "Occasionally mixes up similar geometric figures.",
+            "strength": "Can identify most shapes but struggles with distinctions.",
+            "improve": "Needs more practice with properties of shapes.",
+            "message": "Great progress! With more interactive exercises, [Child\u2019s Name] will master shape classification in no time!",
+            "why_this_matters": "Recognizing shapes accurately is key to understanding geometry in real life."
+          }
+        },
+        {
+          "text": "c) No, they struggle with shape classification.",
+          "feedback": {
+            "identified_issue": "Finds it difficult to differentiate between geometric shapes.",
+            "strength": "-",
+            "improve": "Needs step-by-step guidance to understand shapes and their properties.",
+            "message": "No worries! We\u2019ll introduce [Child\u2019s Name] to engaging activities that make learning shapes fun and easy.",
+            "why_this_matters": "Geometry is used in architecture, design, and everyday problem-solving."
+          }
+        }
+      ]
+    },
+    {
+      "question": "3D Visualization & Spatial Awareness",
+      "options": [
+        {
+          "text": "a) Yes, they can easily visualize and manipulate 3D objects in their mind.",
+          "feedback": {
+            "identified_issue": "No issue identified.",
+            "strength": "Strong spatial reasoning and visualization skills.",
+            "improve": "-",
+            "message": "Amazing! [Child\u2019s Name] has a great ability to picture and rotate objects mentally. Keep challenging them with puzzles and construction games!",
+            "why_this_matters": "Spatial reasoning is essential for engineering, design, and problem-solving."
+          }
+        },
+        {
+          "text": "b) Yes, but they sometimes need physical models to help.",
+          "feedback": {
+            "identified_issue": "Relies on physical references for spatial understanding.",
+            "strength": "Can visualize but needs external support for complex objects.",
+            "improve": "Needs practice with mental manipulation of 3D objects.",
+            "message": "Great job! With more hands-on activities, [Child\u2019s Name] will improve their spatial thinking effortlessly.",
+            "why_this_matters": "Enhancing spatial reasoning helps with problem-solving in science and math."
+          }
+        },
+        {
+          "text": "c) No, they struggle with visualizing 3D objects.",
+          "feedback": {
+            "identified_issue": "Difficulty imagining objects from different perspectives.",
+            "strength": "-",
+            "improve": "Needs step-by-step visualization exercises.",
+            "message": "That\u2019s okay! We\u2019ll use fun interactive methods to help [Child\u2019s Name] improve their 3D visualization skills.",
+            "why_this_matters": "Strong spatial awareness is crucial for geometry, physics, and design."
+          }
+        }
+      ]
+    },
+    {
+      "question": "Measurement Concepts (Area, Perimeter, Volume)",
+      "options": [
+        {
+          "text": "a) Yes, they can apply these concepts confidently in problems.",
+          "feedback": {
+            "identified_issue": "No issue identified.",
+            "strength": "Strong grasp of measurement concepts.",
+            "improve": "-",
+            "message": "Fantastic! [Child\u2019s Name] understands measurements well. Keep encouraging them with real-world applications like measuring objects at home!",
+            "why_this_matters": "Understanding measurement is essential for math, science, and daily life."
+          }
+        },
+        {
+          "text": "b) Yes, but they sometimes mix up formulas.",
+          "feedback": {
+            "identified_issue": "Confuses formulas for area, perimeter, and volume.",
+            "strength": "Understands concepts but lacks confidence in correct application.",
+            "improve": "Needs more structured practice in applying formulas.",
+            "message": "Great effort! With more guided exercises, [Child\u2019s Name] will master measurement calculations quickly.",
+            "why_this_matters": "Using correct formulas is essential for advanced geometry and real-world applications."
+          }
+        },
+        {
+          "text": "c) No, they struggle with measurement concepts.",
+          "feedback": {
+            "identified_issue": "Difficulty understanding how to calculate area, perimeter, and volume.",
+            "strength": "-",
+            "improve": "Needs clear step-by-step instruction and hands-on practice.",
+            "message": "No worries! We\u2019ll introduce simple and engaging techniques to help [Child\u2019s Name] understand measurement easily.",
+            "why_this_matters": "Measurement skills are fundamental for practical problem-solving and higher math."
+          }
+        }
+      ]
+    }
+  ]
+}

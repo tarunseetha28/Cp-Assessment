@@ -45,6 +45,26 @@ app.post('/api/submit-form', async (req, res) => {
     const formData = req.body;
     console.log('Received form data:', formData);
 
+    // Validate required fields
+    const requiredFields = ['name', 'email', 'contact', 'childName', 'childAge', 'childGender'];
+    const missingFields = requiredFields.filter(field => !formData[field]);
+    
+    if (missingFields.length > 0) {
+      return res.status(400).json({
+        error: 'Missing required fields',
+        details: `Missing fields: ${missingFields.join(', ')}`
+      });
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      return res.status(400).json({
+        error: 'Invalid email format',
+        details: 'Please provide a valid email address'
+      });
+    }
+
     // Prepare data for Google Sheets
     const values = [
       [
@@ -52,58 +72,58 @@ app.post('/api/submit-form', async (req, res) => {
         formData.name,
         formData.email,
         formData.contact,
-        formData.childName || '', // New field
-        formData.childAge || '',  // New field
-        formData.childGender || '', // New field
-        formData.step1,
-        formData.step2,
-        formData.step3,
-        formData.step4,
-        formData.step5,
-        formData.step6,
-        formData.step7,
-        formData.step8,
-        formData.step9
+        formData.childName,
+        formData.childAge,
+        formData.childGender,
+        // Add all question responses
+        ...Object.entries(formData)
+          .filter(([key]) => key.startsWith('step'))
+          .sort(([a], [b]) => {
+            const numA = parseInt(a.replace('step', ''));
+            const numB = parseInt(b.replace('step', ''));
+            return numA - numB;
+          })
+          .map(([_, value]) => value || '') // Handle undefined values
       ],
     ];
 
     // Append data to Google Sheet
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.SPREADSHEET_ID,
-      range: 'Sheet1!A:P', // Updated range to include new columns
+      range: 'Sheet1!A:P',
       valueInputOption: 'RAW',
       resource: { values },
     });
 
-    console.log('Form submission received:', {
-      timestamp: new Date().toISOString(),
-      name: formData.name,
-      email: formData.email,
-      contact: formData.contact,
-      childInfo: {
-        name: formData.childName,
-        age: formData.childAge,
-        gender: formData.childGender
-      },
-      responses: {
-        step1: formData.step1,
-        step2: formData.step2,
-        step3: formData.step3,
-        step4: formData.step4,
-        step5: formData.step5,
-        step6: formData.step6,
-        step7: formData.step7,
-        step8: formData.step8,
-        step9: formData.step9
-      }
-    });
+    // Send confirmation email
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: formData.email,
+      subject: 'Assessment Form Submission Confirmation',
+      html: `
+        <h2>Thank you for submitting the assessment form!</h2>
+        <p>We have received your submission and will review it shortly.</p>
+        <h3>Submission Details:</h3>
+        <ul>
+          <li>Child's Name: ${formData.childName}</li>
+          <li>Child's Age: ${formData.childAge}</li>
+          <li>Child's Gender: ${formData.childGender}</li>
+        </ul>
+        <p>We will contact you at ${formData.email} or ${formData.contact} if we need any additional information.</p>
+      `
+    };
 
-    res.status(200).json({ message: 'Form submitted successfully' });
+    await transporter.sendMail(mailOptions);
+
+    res.status(200).json({ 
+      message: 'Form submitted successfully',
+      details: 'Your assessment has been recorded and a confirmation email has been sent.'
+    });
   } catch (error) {
     console.error('Detailed error:', error);
     res.status(500).json({ 
       error: 'Failed to submit form',
-      details: error.message 
+      details: error.message || 'An unexpected error occurred'
     });
   }
 });
