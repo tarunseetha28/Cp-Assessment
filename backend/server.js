@@ -27,12 +27,32 @@ const auth = new google.auth.GoogleAuth({
 const sheets = google.sheets({ version: 'v4', auth });
 
 // Email transporter setup
+console.log('Email configuration check:');
+console.log('EMAIL_USER exists:', !!process.env.EMAIL_USER);
+console.log('EMAIL_PASSWORD exists:', !!process.env.EMAIL_PASSWORD);
+console.log('EMAIL_USER length:', process.env.EMAIL_USER?.length);
+console.log('EMAIL_PASSWORD length:', process.env.EMAIL_PASSWORD?.length);
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,
   },
+  debug: true // Enable debug logging
+});
+
+// Verify email configuration on server start
+transporter.verify(function(error, success) {
+  if (error) {
+    console.error('Email configuration error:', {
+      message: error.message,
+      code: error.code,
+      command: error.command
+    });
+  } else {
+    console.log('Email server is ready to send messages');
+  }
 });
 
 // Test endpoint

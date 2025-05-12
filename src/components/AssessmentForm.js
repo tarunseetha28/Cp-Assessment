@@ -216,10 +216,10 @@ Child's Gender: ${formData.childGender}
                 onChange={handleAgeGroupChange}
                 required
               >
-                <MenuItem value="(0-3)">0-3 years</MenuItem>
-                <MenuItem value="(3-6)">3-6 years</MenuItem>
-                <MenuItem value="Age(6-9)">6-9 years</MenuItem>
-                <MenuItem value="Age(9-12)">9-12 years</MenuItem>
+                <MenuItem value="Age (0-3)">0-3 years</MenuItem>
+                <MenuItem value="Age (3-6)">3-6 years</MenuItem>
+                <MenuItem value="Age (6-9)">6-9 years</MenuItem>
+                <MenuItem value="Age (9-12)">9-12 years</MenuItem>
               </Select>
             </FormControl>
             <FormControl fullWidth margin="normal">
