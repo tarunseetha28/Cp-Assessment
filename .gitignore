@@ -25,5 +25,4 @@ yarn-error.log*
 .idea
 .vscode
 *.swp
-*.swo 
-.vercel
+*.swo

@@ -1,102 +1,49 @@
-# Deployment Guide
+# Deployment Guide for CP Assessment Form
 
-## Quick Deploy Options
+## Frontend Deployment (Hostinger)
 
-### Option 1: Vercel (Frontend) + Railway (Backend) - RECOMMENDED
-
-#### Frontend Deployment (Vercel)
-
-1. **Install Vercel CLI:**
-   ```bash
-   npm install -g vercel
-   ```
-
-2. **Deploy to Vercel:**
-   ```bash
-   npm run deploy
-   ```
-
-3. **Set Environment Variables in Vercel Dashboard:**
-   - Go to your project settings in Vercel
-   - Add environment variable: `REACT_APP_API_URL` = your backend URL
-
-#### Backend Deployment (Railway)
-
-1. **Create Railway Account:**
-   - Go to [railway.app](https://railway.app)
-   - Sign up with GitHub
-
-2. **Deploy Backend:**
-   - Connect your GitHub repository
-   - Set root directory to `backend`
-   - Add environment variables:
-     - `EMAIL_USER`
-     - `EMAIL_PASSWORD`
-     - `SPREADSHEET_ID`
-     - `GOOGLE_CLIENT_EMAIL`
-     - `GOOGLE_PRIVATE_KEY`
-
-3. **Get Backend URL:**
-   - Railway will provide a URL like: `https://your-app.railway.app`
-   - Update `REACT_APP_API_URL` in Vercel with this URL
-
-### Option 2: Netlify (Frontend) + Render (Backend)
-
-#### Frontend Deployment (Netlify)
-
-1. **Build the project:**
+### Hostinger Deployment Steps
+1. **Build your React app:**
    ```bash
    npm run build
    ```
 
-2. **Deploy to Netlify:**
-   - Drag and drop the `build` folder to [netlify.com](https://netlify.com)
-   - Or connect your GitHub repository
+2. **Upload to Hostinger:**
+   - Log in to your Hostinger control panel
+   - Go to File Manager
+   - Navigate to `public_html` folder
+   - Upload all contents from the `build` folder
 
-3. **Set Environment Variables:**
-   - Go to Site Settings > Environment Variables
-   - Add `REACT_APP_API_URL`
+3. **Configure Domain:**
+   - Point your domain to the Hostinger hosting
+   - Set up SSL certificate (free with Hostinger)
 
-#### Backend Deployment (Render)
+4. **Environment Variables:**
+   - Update `REACT_APP_API_URL` in your code to point to your backend
 
-1. **Create Render Account:**
-   - Go to [render.com](https://render.com)
-   - Sign up with GitHub
+## Backend Deployment
 
-2. **Deploy Backend:**
-   - Create new Web Service
-   - Connect your GitHub repository
-   - Set root directory to `backend`
-   - Build command: `npm install`
-   - Start command: `npm start`
-
-### Option 3: GitHub Pages (Frontend) + Heroku (Backend)
-
-#### Frontend Deployment (GitHub Pages)
-
-1. **Add GitHub Pages dependency:**
-   ```bash
-   npm install --save-dev gh-pages
+### Option 1: Railway (Recommended)
+1. **Sign up at [railway.app](https://railway.app)**
+2. **Connect your GitHub repository**
+3. **Add environment variables:**
    ```
-
-2. **Update package.json:**
-   ```json
-   {
-     "homepage": "https://yourusername.github.io/your-repo-name",
-     "scripts": {
-       "predeploy": "npm run build",
-       "deploy": "gh-pages -d build"
-     }
-   }
+   EMAIL_USER=your-email@gmail.com
+   EMAIL_PASSWORD=your-app-password
+   PORT=3001
    ```
+4. **Deploy automatically**
 
-3. **Deploy:**
-   ```bash
-   npm run deploy
-   ```
+### Option 2: Render
+1. **Sign up at [render.com](https://render.com)**
+2. **Create a new Web Service**
+3. **Connect your GitHub repository**
+4. **Configure:**
+   - Build Command: `npm install`
+   - Start Command: `node server.js`
+   - Add environment variables
 
-#### Backend Deployment (Heroku)
-
+### Option 3: Heroku
 1. **Install Heroku CLI:**
    ```bash
    npm install -g heroku
@@ -107,36 +54,35 @@
    heroku create your-app-name
    ```
 
-3. **Deploy:**
+3. **Add environment variables:**
    ```bash
-   git add .
-   git commit -m "Deploy to Heroku"
+   heroku config:set EMAIL_USER=your-email@gmail.com
+   heroku config:set EMAIL_PASSWORD=your-app-password
+   ```
+
+4. **Deploy:**
+   ```bash
    git push heroku main
    ```
 
 ## Environment Variables Setup
 
-### Frontend (.env)
+### Frontend (.env file)
 ```
 REACT_APP_API_URL=https://your-backend-url.com
 ```
 
-### Backend (.env)
+### Backend (.env file)
 ```
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASSWORD=your-app-password
-SPREADSHEET_ID=your-google-sheet-id
-GOOGLE_CLIENT_EMAIL=your-service-account-email
-GOOGLE_PRIVATE_KEY=your-private-key
 PORT=3001
 ```
 
 ## Continuous Deployment
 
-### GitHub Actions (Recommended)
-
+### GitHub Actions (Optional)
 Create `.github/workflows/deploy.yml`:
-
 ```yaml
 name: Deploy to Production
 
@@ -145,92 +91,85 @@ on:
     branches: [ main ]
 
 jobs:
-  deploy-frontend:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '18'
-      - run: npm install
-      - run: npm run build
-      - uses: amondnet/vercel-action@v20
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.ORG_ID }}
-          vercel-project-id: ${{ secrets.PROJECT_ID }}
-          vercel-args: '--prod'
-
-  deploy-backend:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '18'
-      - run: cd backend && npm install
-      - uses: railway/action@v1
-        with:
-          railway_token: ${{ secrets.RAILWAY_TOKEN }}
+    - uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+    - name: Install dependencies
+      run: npm install
+    - name: Build
+      run: npm run build
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-files
+        path: build/
 ```
 
 ## Domain Setup
 
-### Custom Domain (Optional)
+### Custom Domain
+1. **Hostinger:**
+   - Go to Domain Management in Hostinger
+   - Point your domain to hosting
+   - Set up SSL certificate
 
-1. **Vercel:**
-   - Go to project settings
-   - Add custom domain
-   - Update DNS records
-
-2. **Railway:**
-   - Go to project settings
-   - Add custom domain
-   - Update DNS records
+2. **Backend:**
+   - Use your hosting provider's domain management
+   - Set up subdomain (e.g., api.yourdomain.com)
 
 ## Monitoring & Analytics
 
-### Vercel Analytics
-- Built-in analytics in Vercel dashboard
-- Performance monitoring
-- Error tracking
+### Frontend
+- Google Analytics
+- Hotjar for user behavior
+- Hostinger's built-in analytics
 
-### Railway Monitoring
-- Built-in logs and monitoring
-- Performance metrics
-- Error tracking
+### Backend
+- Railway/Render/Heroku logs
+- Application monitoring tools
 
 ## Security Considerations
 
-1. **Environment Variables:**
-   - Never commit `.env` files
-   - Use platform-specific secret management
+### Environment Variables
+- Never commit `.env` files
+- Use secure environment variable storage
+- Rotate API keys regularly
 
-2. **CORS Configuration:**
-   - Update backend CORS to allow your frontend domain
+### HTTPS
+- Enable HTTPS on all domains
+- Use secure headers
+- Implement CORS properly
 
-3. **HTTPS:**
-   - All platforms provide HTTPS by default
+### Data Protection
+- Validate all inputs
+- Sanitize data before storage
+- Implement rate limiting
 
 ## Troubleshooting
 
 ### Common Issues
-
-1. **CORS Errors:**
-   - Update backend CORS configuration
+1. **Build Failures:**
+   - Check for linting errors
+   - Verify all dependencies are installed
    - Check environment variables
 
-2. **Build Failures:**
-   - Check Node.js version compatibility
-   - Verify all dependencies are installed
+2. **API Connection Issues:**
+   - Verify backend URL is correct
+   - Check CORS settings
+   - Ensure backend is running
 
-3. **Environment Variables:**
-   - Ensure all required variables are set
-   - Check variable names and values
+3. **Email Issues:**
+   - Verify email credentials
+   - Check email service settings
+   - Test email functionality
 
-### Support
-
-- Vercel: [vercel.com/support](https://vercel.com/support)
-- Railway: [railway.app/docs](https://railway.app/docs)
-- Netlify: [netlify.com/support](https://netlify.com/support)
-- Render: [render.com/docs](https://render.com/docs) 
+### Support Resources
+- [Hostinger Documentation](https://www.hostinger.com/help)
+- [Railway Documentation](https://docs.railway.app)
+- [Render Documentation](https://render.com/docs)
+- [Heroku Documentation](https://devcenter.heroku.com) 
