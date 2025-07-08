@@ -1,9 +1,6 @@
 import React from 'react';
-import { Container, Box, Paper, Typography, Button, IconButton } from '@mui/material';
+import { Container, Box, Typography, Button } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
 
 function ThankYou() {
   const navigate = useNavigate();
@@ -42,7 +39,7 @@ function ThankYou() {
         justifyContent: 'center',
         py: 4
       }}>
-        <Paper elevation={3} sx={{ 
+        <Box sx={{ 
           p: 4, 
           textAlign: 'center',
           borderRadius: '20px',
@@ -140,10 +137,10 @@ function ThankYou() {
         >
 <b>Subscribe Our YouTube Channel</b> For Regular Updates, Learning Tips, And Fun Nursery Rhyme Songs For Your Kids        </Typography>
        
-<IconButton
-  href="https://youtube.com"
-  target="_blank"
-  disableRipple
+<Box
+  component="img"
+  src="/assets/yt.svg"
+  alt="YouTube"
   sx={{
     padding: 1,
     backgroundColor: 'transparent !important',
@@ -156,13 +153,7 @@ function ThankYou() {
       boxShadow: 'none',
     },
   }}
->
-  <Box
-    component="img"
-    src="/assets/yt.svg"
-    alt="YouTube"
-  />
-</IconButton>
+/>
 
 
       </Box>
@@ -191,10 +182,10 @@ function ThankYou() {
           <b>Follow Us On Facebook And Instagram</b> For More Learning Resources, Updates, And Fun Activities For Your Kids!
         </Typography>
         <Box sx={{ display: 'flex', gap: 1 }}>
-  <IconButton
-    href="https://facebook.com"
-    target="_blank"
-    disableRipple
+  <Box
+    component="img"
+    src="/assets/fb.svg" // Replace with actual path to your Facebook icon
+    alt="Facebook"
     sx={{
       padding: 1,
       backgroundColor: 'transparent !important',
@@ -207,19 +198,12 @@ function ThankYou() {
         boxShadow: 'none',
       },
     }}
-  >
-    <Box
-      component="img"
-      src="/assets/fb.svg" // Replace with actual path to your Facebook icon
-      alt="Facebook"
-     
-    />
-  </IconButton>
+  />
 
-  <IconButton
-    href="https://instagram.com"
-    target="_blank"
-    disableRipple
+  <Box
+    component="img"
+    src="/assets/inst.svg" // Replace with actual path to your Instagram icon
+    alt="Instagram"
     sx={{
       padding: 1,
       backgroundColor: 'transparent !important',
@@ -232,14 +216,7 @@ function ThankYou() {
         boxShadow: 'none',
       },
     }}
-  >
-    <Box
-      component="img"
-      src="/assets/inst.svg" // Replace with actual path to your Instagram icon
-      alt="Instagram"
-
-    />
-  </IconButton>
+  />
 </Box>
 
       </Box>
@@ -325,7 +302,7 @@ function ThankYou() {
               Back to Home
             </Button>
           </Box>
-        </Paper>
+        </Box>
       </Box>
     </Container>
   );

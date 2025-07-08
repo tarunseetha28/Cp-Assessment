@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Container, Box, Typography, Paper, Button } from '@mui/material';
+import { Container, Box, Typography, Button } from '@mui/material';
 import questionsByAgeGroup from '../questions_by_age_group.json';
 import jsPDF from 'jspdf';
 

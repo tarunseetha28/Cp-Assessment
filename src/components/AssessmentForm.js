@@ -7,9 +7,7 @@ import {
   Box, 
   Typography, 
   Button, 
-  Radio, 
   RadioGroup, 
-  FormControlLabel, 
   FormControl, 
   TextField,
   CircularProgress,
@@ -18,10 +16,7 @@ import {
   MenuItem,
   Grid
 } from '@mui/material';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import emailjs from '@emailjs/browser';
-import CheckIcon from '@mui/icons-material/Check';
 import questionsByAgeGroup from '../questions_by_age_group.json';
 
 // Initialize EmailJS
@@ -254,8 +249,6 @@ Child's Gender: ${formData.childGender}
       setLoading(false);
     }
   };
-
-  const questions = questionsByAgeGroup[selectedAgeGroup] || [];
 
   const renderStep = () => {
     if (currentStep === 0) {

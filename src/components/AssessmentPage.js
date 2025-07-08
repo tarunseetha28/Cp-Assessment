@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 
 function AssessmentPage() {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
   return (
     <Container maxWidth="lg">
