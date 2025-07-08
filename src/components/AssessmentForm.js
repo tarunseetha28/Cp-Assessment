@@ -15,7 +15,8 @@ import {
   CircularProgress,
   InputLabel,
   Select,
-  MenuItem
+  MenuItem,
+  Grid
 } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -41,7 +42,6 @@ function AssessmentForm() {
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState({
-    childName: '',
     childAge: '',
     childGender: '',
     step1: '',
@@ -60,6 +60,67 @@ function AssessmentForm() {
   });
   const [loading, setLoading] = useState(false);
   const [selectedAgeGroup, setSelectedAgeGroup] = useState('');
+  const [contactError, setContactError] = useState('');
+
+  // WhatsApp number validation function
+  const validateWhatsAppNumber = (number) => {
+    // Remove all non-digit characters
+    const cleanNumber = number.replace(/\D/g, '');
+    
+    // Check if it starts with a country code (1-3 digits)
+    if (cleanNumber.length < 10) {
+      return 'Number is too short. Please include country code.';
+    }
+    
+    if (cleanNumber.length > 15) {
+      return 'Number is too long. Please check your input.';
+    }
+    
+    // Common country code patterns (major countries)
+    const countryCodes = [
+      '1', '7', '20', '27', '30', '31', '32', '33', '34', '36', '39', '40', '41', '43', '44', '45', '46', '47', '48', '49',
+      '51', '52', '53', '54', '55', '56', '57', '58', '60', '61', '62', '63', '64', '65', '66', '81', '82', '84', '86', '90', '91', '92', '93', '94', '95', '98', '971', '972', '973', '974', '975', '976', '977', '978', '979', '994', '995', '996', '998'
+    ];
+    
+    // Check if the number starts with a valid country code
+    let isValidCountryCode = false;
+    let detectedCountryCode = '';
+    for (const code of countryCodes) {
+      if (cleanNumber.startsWith(code)) {
+        isValidCountryCode = true;
+        detectedCountryCode = code;
+        break;
+      }
+    }
+    
+    if (!isValidCountryCode) {
+      return 'Please include a valid country code (e.g., +1 for US, +91 for India)';
+    }
+    
+    // Check if the remaining digits are reasonable for a phone number
+    const remainingDigits = cleanNumber.length - detectedCountryCode.length;
+    if (remainingDigits < 9 || remainingDigits > 12) {
+      return `Invalid number length. Expected ${detectedCountryCode.length + 9}-${detectedCountryCode.length + 12} digits total.`;
+    }
+    
+    return '';
+  };
+
+  const handleContactChange = (e) => {
+    const value = e.target.value;
+    setFormData(prev => ({ ...prev, contact: value }));
+    
+    // Clear error when user starts typing
+    if (contactError) {
+      setContactError('');
+    }
+    
+    // Validate on blur or when user finishes typing
+    if (value.length > 0) {
+      const error = validateWhatsAppNumber(value);
+      setContactError(error);
+    }
+  };
 
   const handleRadioChange = (step, value) => {
     setFormData(prev => ({
@@ -91,6 +152,14 @@ function AssessmentForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validate WhatsApp number before submission
+    const contactValidationError = validateWhatsAppNumber(formData.contact);
+    if (contactValidationError) {
+      setContactError(contactValidationError);
+      return;
+    }
+    
     setLoading(true);
     
     try {
@@ -102,7 +171,6 @@ function AssessmentForm() {
         name: formData.name,
         email: formData.email,
         contact: formData.contact,
-        childName: formData.childName,
         childAge: formData.childAge,
         childGender: formData.childGender,
         // Add all question responses
@@ -114,7 +182,8 @@ function AssessmentForm() {
       };
 
       // Send form data to backend
-      const response = await fetch('http://localhost:3001/api/submit-form', {
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+      const response = await fetch(`${apiUrl}/api/submit-form`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -129,7 +198,6 @@ function AssessmentForm() {
 
       // Build answers string for email
       let answers = `
-Child's Name: ${formData.childName}
 Child's Age: ${formData.childAge}
 Child's Gender: ${formData.childGender}
 `;
@@ -150,7 +218,7 @@ Child's Gender: ${formData.childGender}
           from_name: formData.name,
           from_email: formData.email,
           contact_number: formData.contact,
-          child_name: formData.childName,
+          child_name: 'Your Child', // Dummy value to satisfy EmailJS template
           child_age: formData.childAge,
           child_gender: formData.childGender,
           answers: answers
@@ -160,7 +228,6 @@ Child's Gender: ${formData.childGender}
       // Clear form data and navigate to result page
       const resultFormData = { ...formData };
       setFormData({
-        childName: '',
         childAge: '',
         childGender: '',
         step1: '',
@@ -179,7 +246,7 @@ Child's Gender: ${formData.childGender}
       });
       setCurrentStep(0);
       setSelectedAgeGroup('');
-      navigate('/result', { state: { formData: resultFormData } });
+      navigate('/thank-you', { state: { formData: resultFormData } });
     } catch (error) {
       console.error('Error:', error);
       alert(error.message || 'Error submitting form. Please try again.');
@@ -192,58 +259,129 @@ Child's Gender: ${formData.childGender}
 
   const renderStep = () => {
     if (currentStep === 0) {
-      // Always render the age group/child info form
       return (
-        <Box sx={{ mb: 4 }}>
-          <Typography variant="h5" gutterBottom>
-            Tell us about your child
-          </Typography>
-          <form onSubmit={(e) => { e.preventDefault(); handleNext(); }}>
-            <TextField
-              fullWidth
-              label="Child's Name"
-              name="childName"
-              value={formData.childName}
-              onChange={handleInputChange}
-              required
-              margin="normal"
-            />
-            <FormControl fullWidth margin="normal">
-              <InputLabel>Child's Age</InputLabel>
-              <Select
-                name="childAge"
-                value={formData.childAge}
-                onChange={handleAgeGroupChange}
-                required
+        <Box sx={{ 
+          minHeight: '100vh',
+          width: '100%',
+          backgroundColor: '#F5FAFF',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          overflow: 'auto'
+        }}>
+          <Container maxWidth="md" sx={{ 
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '100%',
+            py: 4
+          }}>
+            <Box sx={{ 
+              backgroundColor: '#FFFFFF',
+              borderRadius: '20px',
+              p: 4,
+              boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.05)',
+              width: '100%',
+              maxWidth: '600px'
+            }}>
+              {/* Logo */}
+              <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
+                <img 
+                  src="/assets/logo.png" 
+                  alt="Logo" 
+                  style={{ maxWidth: '200px', height: 'auto' }}
+                />
+              </Box>
+
+              <Typography 
+                variant="h4" 
+                sx={{ 
+                  fontFamily: 'Gilroy-Bold, sans-serif',
+                  mb: 4,
+                  textAlign: 'center',
+                  color: '#000000'
+                }}
               >
-                <MenuItem value="Age (0-3)">0-3 years</MenuItem>
-                <MenuItem value="Age (3-6)">3-6 years</MenuItem>
-                <MenuItem value="Age (6-9)">6-9 years</MenuItem>
-                <MenuItem value="Age (9-12)">9-12 years</MenuItem>
-              </Select>
-            </FormControl>
-            <FormControl fullWidth margin="normal">
-              <InputLabel>Child's Gender</InputLabel>
-              <Select
-                name="childGender"
-                value={formData.childGender}
-                onChange={handleInputChange}
-                required
-              >
-                <MenuItem value="Male">Male</MenuItem>
-                <MenuItem value="Female">Female</MenuItem>
-                <MenuItem value="Other">Other</MenuItem>
-              </Select>
-            </FormControl>
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              sx={{ mt: 2 }}
-            >
-              Next
-            </Button>
-          </form>
+                Tell us about your child
+              </Typography>
+
+              <form onSubmit={(e) => { e.preventDefault(); handleNext(); }}>
+                <Grid container spacing={3}>
+                  {/* Age and Gender in same row */}
+                  <Grid item xs={12} sm={6}>
+                    <FormControl fullWidth>
+                      <InputLabel sx={{ color: '#000000' }}>Child's Age</InputLabel>
+                      <Select
+                        name="childAge"
+                        value={formData.childAge}
+                        onChange={handleAgeGroupChange}
+                        required
+                        sx={{
+                          backgroundColor: '#FFFFFF',
+                          borderRadius: '10px',
+                          '& .MuiOutlinedInput-notchedOutline': {
+                            border: '1px solid #E8F1FB',
+                          },
+                        }}
+                      >
+                        <MenuItem value="Age (0-3)">0-3 years</MenuItem>
+                        <MenuItem value="Age (3-6)">3-6 years</MenuItem>
+                        <MenuItem value="Age (6-9)">6-9 years</MenuItem>
+                        <MenuItem value="Age (9-12)">9-12 years</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Grid>
+
+                  <Grid item xs={12} sm={6}>
+                    <FormControl fullWidth>
+                      <InputLabel sx={{ color: '#000000' }}>Child's Gender</InputLabel>
+                      <Select
+                        name="childGender"
+                        value={formData.childGender}
+                        onChange={handleInputChange}
+                        required
+                        sx={{
+                          backgroundColor: '#FFFFFF',
+                          borderRadius: '10px',
+                          '& .MuiOutlinedInput-notchedOutline': {
+                            border: '1px solid #E8F1FB',
+                          },
+                        }}
+                      >
+                        <MenuItem value="Male">Male</MenuItem>
+                        <MenuItem value="Female">Female</MenuItem>
+                        <MenuItem value="Other">Other</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Grid>
+
+                  <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      sx={{
+                        backgroundColor: '#000000',
+                        color: '#FFFFFF',
+                        borderRadius: '30px',
+                        px: 6,
+                        py: 1.5,
+                        '&:hover': {
+                          backgroundColor: '#333333',
+                        },
+                      }}
+                    >
+                      Next
+                    </Button>
+                  </Grid>
+                </Grid>
+              </form>
+            </Box>
+          </Container>
         </Box>
       );
     }
@@ -254,49 +392,241 @@ Child's Gender: ${formData.childGender}
     // Show the final info form after all questions
     if (currentStep === currentQuestions.length + 1) {
       return (
-        <Box sx={{ mb: 4 }}>
-          <Typography variant="h5" gutterBottom>
-            Final Step
-          </Typography>
-          <form onSubmit={handleSubmit}>
-            <TextField
-              fullWidth
-              label="Name"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-              margin="normal"
-            />
-            <TextField
-              fullWidth
-              label="Email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-              margin="normal"
-            />
-            <TextField
-              fullWidth
-              label="Contact Number"
-              name="contact"
-              value={formData.contact}
-              onChange={handleInputChange}
-              required
-              margin="normal"
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              sx={{ mt: 2 }}
-              disabled={loading}
-            >
-              {loading ? <CircularProgress size={24} /> : 'Submit'}
-            </Button>
-          </form>
+        <Box sx={{ 
+          minHeight: '100vh',
+          width: '100%',
+          backgroundImage: 'url(/assets/maskbg.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          overflow: 'auto'
+        }}>
+          <Container maxWidth="md" sx={{ 
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '100%',
+            py: 4
+          }}>
+            <Box sx={{ 
+              p: 4,
+              width: '100%',
+              maxWidth: '600px'
+            }}>
+              {/* Logo */}
+              <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
+                <img 
+                  src="/assets/logo.png" 
+                  alt="Logo" 
+                  style={{ maxWidth: '200px', height: 'auto' }}
+                />
+              </Box>
+
+              <Box sx={{ mb: 4, textAlign: 'center' }}>
+                <Typography 
+                  variant="h4" 
+                  component="span"
+                  sx={{ 
+                    fontFamily: 'Gilroy-Bold, sans-serif',
+                    color: '#0097C4',
+                    display: 'block'
+                  }}
+                >
+                  Enter Your Info To Get The
+                </Typography>
+                <Typography 
+                  variant="h4" 
+                  component="span"
+                  sx={{ 
+                    fontFamily: 'Gilroy-Bold, sans-serif',
+                    color: '#FAAA15',
+                    display: 'block'
+                  }}
+                >
+                  Assessment Result
+                </Typography>
+              </Box>
+
+              <form onSubmit={handleSubmit}>
+                <Grid container spacing={3}>
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      label="Name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      sx={{
+                        '& .MuiOutlinedInput-root': {
+                          backgroundColor: '#FFFFFF',
+                          borderRadius: '10px',
+                          '& fieldset': {
+                            border: '1px solid #E8F1FB',
+                          },
+                        },
+                        '& .MuiInputLabel-root': {
+                          color: '#000000',
+                        },
+                      }}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      label="Email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      sx={{
+                        '& .MuiOutlinedInput-root': {
+                          backgroundColor: '#FFFFFF',
+                          borderRadius: '10px',
+                          '& fieldset': {
+                            border: '1px solid #E8F1FB',
+                          },
+                        },
+                        '& .MuiInputLabel-root': {
+                          color: '#000000',
+                        },
+                      }}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      label="WhatsApp Number (with country code)"
+                      name="contact"
+                      value={formData.contact}
+                      onChange={handleContactChange}
+                      onBlur={(e) => {
+                        const error = validateWhatsAppNumber(e.target.value);
+                        setContactError(error);
+                      }}
+                      placeholder="+1 234 567 8900 or +91 98765 43210"
+                      error={!!contactError}
+                      helperText={contactError || "Include country code (e.g., +1 for US, +91 for India)"}
+                      required
+                      sx={{
+                        '& .MuiOutlinedInput-root': {
+                          backgroundColor: '#FFFFFF',
+                          borderRadius: '10px',
+                          '& fieldset': {
+                            border: contactError ? '1px solid #d32f2f' : '1px solid #E8F1FB',
+                          },
+                          '&:hover fieldset': {
+                            border: contactError ? '1px solid #d32f2f' : '1px solid #E8F1FB',
+                          },
+                          '&.Mui-focused fieldset': {
+                            border: contactError ? '1px solid #d32f2f' : '1px solid #1976d2',
+                          },
+                        },
+                        '& .MuiInputLabel-root': {
+                          color: contactError ? '#d32f2f' : '#000000',
+                        },
+                        '& .MuiFormHelperText-root': {
+                          color: contactError ? '#d32f2f' : '#666666',
+                          fontSize: '12px',
+                        },
+                      }}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      disabled={loading}
+                      sx={{
+                        backgroundColor: '#000000',
+                        color: '#FFFFFF',
+                        borderRadius: '30px',
+                        px: 6,
+                        py: 1.5,
+                        '&:hover': {
+                          backgroundColor: '#333333',
+                        },
+                        '&.Mui-disabled': {
+                          backgroundColor: '#CCCCCC',
+                          color: '#FFFFFF'
+                        }
+                      }}
+                    >
+                      {loading ? <CircularProgress size={24} color="inherit" /> : 'Submit'}
+                    </Button>
+                  </Grid>
+                </Grid>
+              </form>
+              
+              {/* Privacy Notice */}
+              <Box sx={{ mt: 3, textAlign: 'center' }}>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    fontFamily: 'Gilroy-Medium, sans-serif',
+                    color: '#666666',
+                    fontSize: '14px',
+                    lineHeight: '1.4',
+                    mb: 2
+                  }}
+                >
+                  Your Personal Information Is Secure And Will Be Used Only For Communication Related To Your Inquiry.
+                </Typography>
+                
+                {/* Privacy Policy and Terms Links */}
+                <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3, flexWrap: 'wrap' }}>
+                  <Typography
+                    component="a"
+                    href="https://www.colorpencil.com/privacy-policy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      fontFamily: 'Gilroy-Medium, sans-serif',
+                      color: '#0097C4',
+                      fontSize: '14px',
+                      textDecoration: 'none',
+                      cursor: 'pointer',
+                      '&:hover': {
+                        textDecoration: 'underline',
+                      }
+                    }}
+                  >
+                    Privacy Policy
+                  </Typography>
+                  <Typography
+                    component="a"
+                    href="https://www.colorpencil.com/terms-and-conditions/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      fontFamily: 'Gilroy-Medium, sans-serif',
+                      color: '#0097C4',
+                      fontSize: '14px',
+                      textDecoration: 'none',
+                      cursor: 'pointer',
+                      '&:hover': {
+                        textDecoration: 'underline',
+                      }
+                    }}
+                  >
+                    Terms & Conditions
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Container>
         </Box>
       );
     }
@@ -596,7 +926,7 @@ Child's Gender: ${formData.childGender}
                     mx: 'auto',
                   }}
                 >
-                  {`${formData.childName ? formData.childName : 'Child'}'s Profile`}
+                  Your Kid's Profile
                 </Box>
               </>
             )}

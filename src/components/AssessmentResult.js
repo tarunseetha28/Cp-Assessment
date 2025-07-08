@@ -15,7 +15,7 @@ function AssessmentResult() {
     return null;
   }
 
-  const { childName, childAge } = formData;
+  const { childAge } = formData;
   const questions = questionsByAgeGroup[childAge] || [];
 
   // PDF download handler
@@ -32,7 +32,7 @@ function AssessmentResult() {
     // Set title
     pdf.setFontSize(titleFontSize);
     pdf.setFont('helvetica', 'bold');
-    const title = `${childName ? `${childName}'s Math Assessment Result!` : 'Math Assessment Result!'}`;
+    const title = 'Math Assessment Result!';
     const titleWidth = pdf.getStringUnitWidth(title) * titleFontSize / pdf.internal.scaleFactor;
     pdf.text(title, (pageWidth - titleWidth) / 2, yPos);
     yPos += lineHeight * 2;
@@ -40,7 +40,7 @@ function AssessmentResult() {
     // Set subtitle
     pdf.setFontSize(subtitleFontSize);
     pdf.setFont('helvetica', 'normal');
-    const subtitle = `Here's what we discovered about ${childName ? childName + "'s" : 'your child\'s'} math skills!`;
+    const subtitle = `Here's what we discovered about your child's math skills!`;
     const subtitleWidth = pdf.getStringUnitWidth(subtitle) * subtitleFontSize / pdf.internal.scaleFactor;
     pdf.text(subtitle, (pageWidth - subtitleWidth) / 2, yPos);
     yPos += lineHeight * 3;
@@ -52,9 +52,9 @@ function AssessmentResult() {
       const answer = formData[stepKey];
       const optionObj = q.options.find(opt => opt.text === answer);
       const feedback = optionObj ? optionObj.feedback : null;
-      const childDisplayName = childName || 'your child';
-      const message = feedback && feedback.message ? feedback.message.replace(/\[Child[’'`]s Name\]/g, childDisplayName) : '';
-      const whyThisMatters = feedback && feedback.why_this_matters ? feedback.why_this_matters.replace(/\[Child[’'`]s Name\]/g, childDisplayName) : '';
+      const childDisplayName = 'your child';
+      const message = feedback && feedback.message ? feedback.message.replace(/\[Child[''`]s Name\]/g, childDisplayName) : '';
+      const whyThisMatters = feedback && feedback.why_this_matters ? feedback.why_this_matters.replace(/\[Child[''`]s Name\]/g, childDisplayName) : '';
 
       // Check if we need a new page
       if (yPos > pdf.internal.pageSize.getHeight() - 40) {
@@ -114,7 +114,7 @@ function AssessmentResult() {
       pdf.setTextColor(0, 0, 0);
     });
 
-    pdf.save(`${childName ? childName : 'assessment'}-math-result.pdf`);
+    pdf.save('assessment-math-result.pdf');
   };
 
   return (
@@ -139,7 +139,7 @@ function AssessmentResult() {
               mb: 2
             }}
           >
-            {childName ? `${childName}'s Math Assessment Result!` : 'Math Assessment Result!'}
+            Math Assessment Result!
           </Typography>
           <Typography
             sx={{
@@ -153,7 +153,7 @@ function AssessmentResult() {
               mb: 4
             }}
           >
-            {`Here's what we discovered about ${childName ? childName + "'s" : 'your child\'s'} math skills!`}
+            {`Here's what we discovered about your child's math skills!`}
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '50px', mb: 5 }}>
             <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
@@ -178,9 +178,8 @@ function AssessmentResult() {
             const optionObj = q.options.find(opt => opt.text === answer);
             const feedback = optionObj ? optionObj.feedback : null;
             // Replace [Child's Name] with actual child name in message and why_this_matters
-            const childDisplayName = childName || 'your child';
-            const message = feedback && feedback.message ? feedback.message.replace(/\[Child[’'`]s Name\]/g, childDisplayName) : '';
-            const whyThisMatters = feedback && feedback.why_this_matters ? feedback.why_this_matters.replace(/\[Child[’'`]s Name\]/g, childDisplayName) : '';
+            const message = feedback && feedback.message ? feedback.message.replace(/\[Child[''`]s Name\]/g, 'your child') : '';
+            const whyThisMatters = feedback && feedback.why_this_matters ? feedback.why_this_matters.replace(/\[Child[''`]s Name\]/g, 'your child') : '';
             return (
               <Box key={idx} sx={{ mb: 3 }}>
                 <Typography 

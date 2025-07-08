@@ -66,7 +66,7 @@ app.post('/api/submit-form', async (req, res) => {
     console.log('Received form data:', formData);
 
     // Validate required fields
-    const requiredFields = ['name', 'email', 'contact', 'childName', 'childAge', 'childGender'];
+    const requiredFields = ['name', 'email', 'contact', 'childAge', 'childGender'];
     const missingFields = requiredFields.filter(field => !formData[field]);
     
     if (missingFields.length > 0) {
@@ -85,6 +85,15 @@ app.post('/api/submit-form', async (req, res) => {
       });
     }
 
+    // Validate WhatsApp number format
+    const cleanNumber = formData.contact.replace(/\D/g, '');
+    if (cleanNumber.length < 10 || cleanNumber.length > 15) {
+      return res.status(400).json({
+        error: 'Invalid WhatsApp number',
+        details: 'Please provide a valid WhatsApp number with country code'
+      });
+    }
+
     // Prepare data for Google Sheets
     const values = [
       [
@@ -92,7 +101,7 @@ app.post('/api/submit-form', async (req, res) => {
         formData.name,
         formData.email,
         formData.contact,
-        formData.childName,
+
         formData.childAge,
         formData.childGender,
         // Add all question responses
@@ -125,11 +134,10 @@ app.post('/api/submit-form', async (req, res) => {
         <p>We have received your submission and will review it shortly.</p>
         <h3>Submission Details:</h3>
         <ul>
-          <li>Child's Name: ${formData.childName}</li>
           <li>Child's Age: ${formData.childAge}</li>
           <li>Child's Gender: ${formData.childGender}</li>
         </ul>
-        <p>We will contact you at ${formData.email} or ${formData.contact} if we need any additional information.</p>
+        <p>We will contact you at ${formData.email} or WhatsApp: ${formData.contact} if we need any additional information.</p>
       `
     };
 
