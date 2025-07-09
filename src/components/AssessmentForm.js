@@ -177,7 +177,7 @@ function AssessmentForm() {
       };
 
       // Send form data to backend
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+      const apiUrl = 'http://localhost:3001';
       const response = await fetch(`${apiUrl}/api/submit-form`, {
         method: 'POST',
         headers: {

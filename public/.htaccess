@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Handle React Router for subdirectory - redirect all requests to index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /cpassessment/index.html [L] 

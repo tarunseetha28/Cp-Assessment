@@ -8,7 +8,7 @@ const app = express();
 
 // Configure CORS
 app.use(cors({
-  origin: 'http://localhost:3000', // React's default port
+  origin: 'http://localhost:3000',
   methods: ['GET', 'POST'],
   credentials: true
 }));
